@@ -42,12 +42,17 @@ Tested in the following environments:
 - Module 4: pathway and importance analyses (e.g., SEM and related R-based analyses) — R 4.4.1
 - Module 5: ecosystem service calculations and related remote-sensing processing — Google Earth Engine
 
+### Python dependencies
+Python was used in parts of the data preprocessing workflow under the Linux environment. Only selected preprocessing scripts require Python and the corresponding packages specified in the relevant scripts.
   
-### R packages
-Please install the required R packages before running the R scripts. These include packages used for regression, structural equation modeling, statistical analysis, and visualization.
-
 ### MATLAB dependencies
 MATLAB was used for data processing, preprocessing, statistical analysis, and plotting. Some scripts may require standard MATLAB toolboxes used for matrix computation, statistics, and visualization.
+
+### HYDRUS-1D
+HYDRUS-1D is required for Module 3, which simulates arsenic transport and root water uptake under the Windows 10 environment.
+
+### R packages
+Please install the required R packages before running the R scripts. These include packages used for regression, structural equation modeling, statistical analysis, and visualization.
 
 ### Hardware requirements
 Representative example workflows and selected site-scale modules can be inspected or partially executed on a standard desktop computer. However, the full global preprocessing workflow was conducted on a high-memory Linux server environment and may require substantial memory and computational resources.
@@ -55,7 +60,7 @@ Representative example workflows and selected site-scale modules can be inspecte
 ## Installation guide
 ### Instructions
 1. Clone or download this repository.
-2. Install MATLAB R2024a and R 4.4.1.
+2. Install MATLAB R2024a ，R 4.4.1 and Hydrus-1D Version 4.17.
 3. Install the required R packages listed in the corresponding scripts.
 4. For the GEE scripts, a valid Google Earth Engine account is required.
 5. Update file paths in the scripts according to your local directory structure before running.
