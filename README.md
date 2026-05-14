@@ -40,7 +40,7 @@ Tested in the following environments:
 - Module 2: site-based statistical analyses using groundwater arsenic observations and vegetation indices — Linux
 - Module 3: HYDRUS-1D simulations of arsenic transport and root water uptake — Windows 10
 - Module 4: pathway and importance analyses (e.g., SEM and related R-based analyses) — R 4.4.1
-- Module 5: ecosystem service calculations and related remote-sensing processing — Google Earth Engine
+- Module 5: ecosystem service calculations and related remote-sensing processing — Google Earth Engine &  Linux
 
 ### Python dependencies
 Python was used in parts of the data preprocessing workflow under the Linux environment. Only selected preprocessing scripts require Python and the corresponding packages specified in the relevant scripts.
