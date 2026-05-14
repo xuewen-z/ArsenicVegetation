@@ -87,3 +87,35 @@ Representative example workflows and selected site-scale modules can be inspecte
 ### Typical installation time
 Installation of the required software environment typically takes for the required software environments of selected modules on a standard desktop computer, excluding external data download time.
 
+
+## Script organization and workflow
+This repository is organized as a modular workflow rather than a single one-click pipeline.
+
+The main workflow is implemented in `MainCode-DataPreprocess/` and `MainCode-DataAnalysis/`, which were primarily run in the Linux server environment. These scripts preprocess the original public global datasets, generate harmonized analysis inputs, and produce intermediate outputs for downstream modules.
+
+The `Hydrus1D_Batch/` folder and the `R-code/` folder are independent downstream modules that use selected intermediate datasets generated from the main workflow:
+- `Hydrus1D_Batch/` uses prepared inputs from the main workflow for HYDRUS-1D simulations under Windows 10;
+- `R-code/` uses prepared inputs from the main workflow for SEM and related statistical analyses in R.
+
+Scripts in the main MATLAB workflow are generally organized in approximate numerical order within each stage. Representative stages in `MainCode-DataAnalysis/` include:
+- `Proc11a–Proc14c2`: vegetation anomaly calculations for LAI, SIF, LCC, and NDVI
+- `Proc25–Proc39`: site-based covariate-adjusted analyses and dose-response data preparation
+- `Proc58–Proc71`: ecosystem service deficit calculations and annual summaries
+- `ProcS01a–ProcS05b`: supplementary or additional analyses
+
+## Demo
+### Demo data
+The full preprocessing workflow relies on multiple large and interdependent public global datasets. These original datasets are publicly available from the sources listed in the Data availability section of the manuscript, but are not redistributed here as a compact demo package.
+
+To facilitate code evaluation, this repository provides representative input data for the independent downstream modules:
+- `R-code/` for SEM and related statistical analyses;
+- `Hydrus1D_Batch/` for HYDRUS-1D simulations and related post-processing.
+
+### Instructions to run the demo
+Demo inputs are provided for the `R-code/` and `Hydrus1D_Batch/` modules. Please see the relevant script headers and folder-level notes for running instructions.
+
+### Expected output
+The demo materials illustrate the required input format, execution workflow, and representative outputs for the R and HYDRUS-based modules.
+
+### Expected run time
+Depends on the local software environment and input size. Full reproduction of the complete global preprocessing workflow is not expected within the demo.
