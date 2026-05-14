@@ -9,7 +9,7 @@ This repository contains the main analysis scripts used in this study, including
 2. site-based statistical analyses using groundwater arsenic observations and vegetation indices;
 3. process-based HYDRUS-1D simulations of arsenic transport and root water uptake;
 4. pathway and importance analyses (e.g.,SEM);
-5. ecosystem service associated post-processing.
+5. ecosystem service-related post-processing.
 
 This repository is currently provided for peer-review purposes.
 
@@ -31,7 +31,7 @@ The `Hydrus1D_Batch/` folder and the `R-code/` folder are independent downstream
 Scripts in the main MATLAB workflow are generally organized in approximate numerical order within each stage. The numbering reflects the progression of the analysis, but the full repository should be understood as a cross-platform modular framework.
 
 Representative stages in `MainCode-DataAnalysis/` include:
-- `Proc11a–Proc14c2: vegetation anomaly calculations for LAI, SIF, LCC, and NDVI
+- `Proc11a–Proc14c2`: vegetation anomaly calculations for LAI, SIF, LCC, and NDVI
 - `Proc25–Proc39`: site-based covariate-adjusted analyses, dose-response data preparation and analysis
 - `Proc58–Proc71`: ecosystem service deficit calculations and annual analyses
 -  `ProcS01a–ProcS05b`: supplementary or additional analyses
@@ -70,7 +70,7 @@ HYDRUS-1D is required for Module 3, which simulates arsenic transport and root w
 Please install the required R packages before running the R scripts. These include packages used for structural equation modeling and visualization.
 
 ### Hardware requirements
-Full global preprocessing workflow was conducted on a high-memory Linux server environment and may require substantial memory and computational resources.
+The full global preprocessing workflow was conducted in a high-memory Linux server environment and may require substantial memory and computational resources.
 
 ## Installation guide
 ### Instructions
