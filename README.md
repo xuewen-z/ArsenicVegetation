@@ -101,5 +101,6 @@ The demo materials illustrate the required input format, execution workflow, and
 ### Expected run time
 Depends on the local software environment and input size. Full reproduction of the complete global preprocessing workflow is not expected within the demo.
 
-
+## Instructions for use
+To run the software on the full datasets, users should first obtain the original public datasets listed in the manuscript, complete the preprocessing workflow in `MainCode-DataPreprocess/`, and then run the downstream modules using the corresponding intermediate outputs. The `R-code/` and `Hydrus1D_Batch/` folders require prepared inputs generated from the main workflow.
 
