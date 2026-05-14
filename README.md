@@ -8,18 +8,33 @@ This repository contains the main analysis scripts used in this study, including
 1. grid-based local comparison of vegetation anomalies across groundwater arsenic risk classes;
 2. site-based statistical analyses using groundwater arsenic observations and vegetation indices;
 3. process-based HYDRUS-1D simulations of arsenic transport and root water uptake;
-4. pathway and importance analyses (SEM and random forest);
+4. pathway and importance analyses (e.g.,SEM);
 5. ecosystem service calculations and associated post-processing.
 
 This repository is currently provided for peer-review purposes.
 
 ## Repository structure
-- `matlab/` : MATLAB scripts for data processing, statistical analysis, visualization, and post-processing
-- `r/` : R scripts for regression, SEM, and related statistical analyses
-- `gee/` : Google Earth Engine scripts for ecosystem service calculations and remote sensing processing
-- `data_demo/` : example input/output files for selected site-scale modules and intermediate processing steps
-- `outputs_example/` : representative example outputs
+- `MainCode-DataPreprocess/` : main preprocessing scripts for large public global datasets
+- `MainCode-DataAnalysis/` : main MATLAB-based analytical scripts for vegetation anomaly analysis, site-based statistical analyses, and ecosystem service calculations
+- `Hydrus1D_Batch/` : HYDRUS-1D-related scripts, input preparation files, and post-processing scripts for process-based simulations
+- `R-code/` : R scripts for SEM and related statistical analyses
 
+## Script organization and workflow
+This repository is organized as a modular workflow rather than a single one-click pipeline.
+
+The main workflow is implemented in `MainCode-DataPreprocess/` and `MainCode-DataAnalysis/`, which were primarily run in the Linux server environment. These scripts preprocess the original public datasets, generate harmonized analysis inputs, and produce intermediate outputs for downstream modules.
+
+The `Hydrus1D_Batch/` folder and the `R-code/` folder are independent downstream modules. They do not operate as fully standalone components, but use selected intermediate datasets generated from the main preprocessing and analysis workflow:
+- `Hydrus1D_Batch/` uses intermediate inputs prepared from the main workflow for HYDRUS-1D simulations under Windows 10;
+- `R-code/` uses prepared inputs from the main workflow for SEM and related analyses in R.
+
+Scripts in the main MATLAB workflow are generally organized in approximate numerical order within each stage. The numbering reflects the progression of the analysis, but the full repository should be understood as a cross-platform modular framework.
+
+Representative stages in `MainCode-DataAnalysis/` include:
+- `Proc11–Proc14`: vegetation anomaly calculations for LAI, SIF, LCC, and NDVI
+- `Proc31–Proc33`: site-based covariate-adjusted analyses and dose-response data preparation
+- `Proc60–Proc71`: ecosystem service deficit calculations and annual summaries
+- `ProcS01–ProcS02`: supplementary or additional analyses
 
 ## System requirements
 ### Operating systems
@@ -60,11 +75,15 @@ Representative example workflows and selected site-scale modules can be inspecte
 ## Installation guide
 ### Instructions
 1. Clone or download this repository.
-2. Install MATLAB R2024a ，R 4.4.1 and Hydrus-1D Version 4.17.
+2.  Install the required software according to the module to be run:
+   - MATLAB R2024a for the main MATLAB workflow
+   - Python for selected preprocessing steps
+   - R 4.4.1 for the R-based analyses
+   - HYDRUS-1D Version 4.17 
 3. Install the required R packages listed in the corresponding scripts.
 4. For the GEE scripts, a valid Google Earth Engine account is required.
 5. Update file paths in the scripts according to your local directory structure before running.
 
 ### Typical installation time
-Installation of the required software environment typically takes less than 60 minutes on a standard desktop computer, excluding external data download time.
+Installation of the required software environment typically takes for the required software environments of selected modules on a standard desktop computer, excluding external data download time.
 
